@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Dashboard</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card-title {
+      color: #007bff;
+    }
+    .accordion-button {
+      background-color: #007bff;
+      color: white;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #0056b3;
+    }
+    .accordion-body {
+      background-color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Task Manager</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="auth.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Task Dashboard -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Task Dashboard</h2>
+    <div class="row">
+      <!-- Task Card Example with Badge -->
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Task Title <span class="badge bg-success">Completed</span></h5>
+            <p class="card-text">Brief description of the task.</p>
+            <a href="task-details.html" class="btn btn-primary">View Details</a>
+            <a href="task-edit.html" class="btn btn-secondary">Edit</a>
+            <button class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat similar blocks for other tasks -->
+    </div>
+    <a href="task-create.html" class="btn btn-success">Add New Task</a>
+
+    <!-- Accordion Component -->
+    <div class="accordion my-5" id="taskAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Task Category 1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#taskAccordion">
+          <div class="accordion-body">
+            <strong>Task details for category 1.</strong> Include task descriptions and details here.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Task Category 2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#taskAccordion">
+          <div class="accordion-body">
+            <strong>Task details for category 2.</strong> Include task descriptions and details here.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
